@@ -100,7 +100,7 @@ namespace Course
                 }
                 if (flag)
                 {
-                    //mainList.RemoveAt(bufIndex);
+                    mainList.RemoveAt(bufIndex);
                     foreach (Floor f in mainList)
                     {
                         if (f.Number == (int)floorNumber.Value)
