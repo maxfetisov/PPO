@@ -1,8 +1,7 @@
 ﻿using System;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
 using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 
 namespace Course
@@ -92,8 +91,11 @@ namespace Course
                 bool flag = false;
                 foreach(Floor f in mainList)
                 {
-                    if(i == bufIndex)
+                    if (i == bufIndex)
+                    {
                         floor = f;
+                        i = f.Number;
+                    }
                     if (f.Number == (int)floorNumber.Value)
                         flag = true;
                     i++;
@@ -117,6 +119,8 @@ namespace Course
                 else
                 {
                     floor.Number = (int)floorNumber.Value;
+                    floor.Path = "Classroom" + floor.Number + ".txt";
+                    File.Delete(mainPath + "\\Classroom" + i + ".txt");
                     mainList.RemoveAt(bufIndex);
                     mainList.Insert(bufIndex, floor);
                 }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-
-namespace Course
+﻿namespace Course
 {
     public class Floor
     {
@@ -31,7 +24,7 @@ namespace Course
             classrooms = new SList<Classroom>();
         }
         public int Number { get => number; set => number = value; }
-        public string Path { get => path; }
+        public string Path { get => path; set => path = value; }
         public bool IsValid()
         {
             try
