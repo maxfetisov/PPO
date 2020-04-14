@@ -14,7 +14,7 @@ namespace Course
             addPicture.Click += AddPicture_Click;
         }
 
-        private void AddPicture_Click(object sender, EventArgs e)
+        private void AddPicture_Click(object sender, EventArgs e) //Добавление изображения к форме добавления элемента
         {
             if(openImage.ShowDialog() == DialogResult.OK)
             {
@@ -23,7 +23,7 @@ namespace Course
             }
         }
 
-        private void Submit_Click(object sender, EventArgs e)
+        private void Submit_Click(object sender, EventArgs e) //Подтверждение создания элемента + проверка на его "валидность"
         {
             int index;
             Floor floor = new Floor((int)floorNumber.Value);

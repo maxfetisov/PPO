@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.floorNumberLabel = new System.Windows.Forms.Label();
+            this.classroomLabel = new System.Windows.Forms.Label();
+            this.ownerLabel = new System.Windows.Forms.Label();
+            this.squareLabel = new System.Windows.Forms.Label();
             this.safety = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.departmentLabel = new System.Windows.Forms.Label();
+            this.capacityLabel = new System.Windows.Forms.Label();
             this.floorNumber = new System.Windows.Forms.NumericUpDown();
             this.classroomNumber = new System.Windows.Forms.NumericUpDown();
             this.ownerName = new System.Windows.Forms.TextBox();
@@ -52,45 +52,45 @@
             ((System.ComponentModel.ISupportInitialize)(this.classroomPicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // floorNumberLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(329, 284);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Номер этажа:";
+            this.floorNumberLabel.AutoSize = true;
+            this.floorNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.floorNumberLabel.Location = new System.Drawing.Point(329, 284);
+            this.floorNumberLabel.Name = "floorNumberLabel";
+            this.floorNumberLabel.Size = new System.Drawing.Size(114, 20);
+            this.floorNumberLabel.TabIndex = 0;
+            this.floorNumberLabel.Text = "Номер этажа:";
             // 
-            // label2
+            // classroomLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(49, 339);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Номер аудитории:";
+            this.classroomLabel.AutoSize = true;
+            this.classroomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.classroomLabel.Location = new System.Drawing.Point(49, 339);
+            this.classroomLabel.Name = "classroomLabel";
+            this.classroomLabel.Size = new System.Drawing.Size(148, 20);
+            this.classroomLabel.TabIndex = 1;
+            this.classroomLabel.Text = "Номер аудитории:";
             // 
-            // label3
+            // ownerLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(49, 385);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Закреплено за:";
+            this.ownerLabel.AutoSize = true;
+            this.ownerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ownerLabel.Location = new System.Drawing.Point(49, 385);
+            this.ownerLabel.Name = "ownerLabel";
+            this.ownerLabel.Size = new System.Drawing.Size(126, 20);
+            this.ownerLabel.TabIndex = 2;
+            this.ownerLabel.Text = "Закреплено за:";
             // 
-            // label4
+            // squareLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(49, 431);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Площадь:";
+            this.squareLabel.AutoSize = true;
+            this.squareLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.squareLabel.Location = new System.Drawing.Point(49, 431);
+            this.squareLabel.Name = "squareLabel";
+            this.squareLabel.Size = new System.Drawing.Size(86, 20);
+            this.squareLabel.TabIndex = 3;
+            this.squareLabel.Text = "Площадь:";
             // 
             // safety
             // 
@@ -103,25 +103,25 @@
             this.safety.Text = "Пройдена проверка безопасности";
             this.safety.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // departmentLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(443, 383);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Кафедра:";
+            this.departmentLabel.AutoSize = true;
+            this.departmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.departmentLabel.Location = new System.Drawing.Point(443, 383);
+            this.departmentLabel.Name = "departmentLabel";
+            this.departmentLabel.Size = new System.Drawing.Size(85, 20);
+            this.departmentLabel.TabIndex = 5;
+            this.departmentLabel.Text = "Кафедра:";
             // 
-            // label6
+            // capacityLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(443, 429);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Вместимость:";
+            this.capacityLabel.AutoSize = true;
+            this.capacityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.capacityLabel.Location = new System.Drawing.Point(443, 429);
+            this.capacityLabel.Name = "capacityLabel";
+            this.capacityLabel.Size = new System.Drawing.Size(116, 20);
+            this.capacityLabel.TabIndex = 6;
+            this.capacityLabel.Text = "Вместимость:";
             // 
             // floorNumber
             // 
@@ -262,13 +262,15 @@
             this.Controls.Add(this.ownerName);
             this.Controls.Add(this.classroomNumber);
             this.Controls.Add(this.floorNumber);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.capacityLabel);
+            this.Controls.Add(this.departmentLabel);
             this.Controls.Add(this.safety);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.squareLabel);
+            this.Controls.Add(this.ownerLabel);
+            this.Controls.Add(this.classroomLabel);
+            this.Controls.Add(this.floorNumberLabel);
+            this.MaximumSize = new System.Drawing.Size(816, 576);
+            this.MinimumSize = new System.Drawing.Size(816, 576);
             this.Name = "Add";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление аудитории";
@@ -284,13 +286,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label floorNumberLabel;
+        private System.Windows.Forms.Label classroomLabel;
+        private System.Windows.Forms.Label ownerLabel;
+        private System.Windows.Forms.Label squareLabel;
         private System.Windows.Forms.CheckBox safety;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label departmentLabel;
+        private System.Windows.Forms.Label capacityLabel;
         private System.Windows.Forms.NumericUpDown floorNumber;
         private System.Windows.Forms.NumericUpDown classroomNumber;
         private System.Windows.Forms.TextBox ownerName;

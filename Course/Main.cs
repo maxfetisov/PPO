@@ -8,22 +8,22 @@ namespace Course
 {
     public partial class Main : Form
     {
-        public static SList<Floor> mainList = new SList<Floor>();
-        public static string mainPath;
-        public static bool autosaveInFile = false;
-        private int bufIndex;
+        public static SList<Floor> mainList = new SList<Floor>(); //Список этажей зданияздания
+        public static string mainPath; //Путь к главному файлу
+        public static bool autosaveInFile = false; //Включено ли автосохранение
+        private int bufIndex; 
         public Main()
         {
             InitializeComponent();
-            source.Click += Source_Click;
+            sourceButton.Click += Source_Click;
             mainList.onListChange += MainListChanged;
-            add.Click += Add_Click;
+            addButton.Click += Add_Click;
             saveButton.Click += SaveButton_Click;
             autosave.CheckedChanged += Autosave_CheckedChanged;
             floorDataGridView.CellClick += FloorDataGridView_CellClick;
             floorDataGridView.CellDoubleClick += FloorDataGridView_CellDoubleClick;
             closeWatchPanel.Click += CloseWatchPanel_Click;
-            tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
+            floorclassroomTabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
             removeData.Click += RemoveData_Click;
             removeAllButton.Click += RemoveAllButton_Click;
             changeData.Click += ChangeData_Click;
@@ -33,7 +33,7 @@ namespace Course
             removeImage.Click += RemoveImage_Click;
         }
 
-        private void RemoveImage_Click(object sender, EventArgs e)
+        private void RemoveImage_Click(object sender, EventArgs e) //Удаление изображения у элемента с помощью панели просмотра
         {
             if (MessageBox.Show("Вы уверены, что хотите удалить изображение?", "Предупреждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -53,7 +53,7 @@ namespace Course
             }
         }
 
-        private void ChangeImage_Click(object sender, EventArgs e)
+        private void ChangeImage_Click(object sender, EventArgs e) //Изменение изображения у элемента с помощью панели просмотра
         {
             openImage.Filter = "Файлы изображений|*.png;*.jpg;*.bmp;*.gif;";
             if (openImage.ShowDialog() == DialogResult.OK)
@@ -81,7 +81,7 @@ namespace Course
             }
         }
 
-        private void SubmitChange_Click(object sender, EventArgs e)
+        private void SubmitChange_Click(object sender, EventArgs e) //Подтверждение изменений на панели просмотра
         {
             if (classroomsBox.Visible)
             {
@@ -171,7 +171,7 @@ namespace Course
             }
         }
 
-        private void CancelChange_Click(object sender, EventArgs e)
+        private void CancelChange_Click(object sender, EventArgs e) //Отмена изменений на панели просмотра
         {
             classroomNumber.Enabled = false;
             ownerName.Enabled = false;
@@ -233,7 +233,7 @@ namespace Course
             bufIndex = -1;
         }
 
-        private void ChangeData_Click(object sender, EventArgs e)
+        private void ChangeData_Click(object sender, EventArgs e) //Начать изменять элемент, выбранный на панели просмотра
         {
             if (classroomsBox.Visible)
             {
@@ -268,7 +268,7 @@ namespace Course
             removeImage.Visible = false;
         }
 
-        private void RemoveAllButton_Click(object sender, EventArgs e)
+        private void RemoveAllButton_Click(object sender, EventArgs e) //Удаление всего списка
         {
             if (MessageBox.Show("Вы уверены, что хотите полностью удалить список? Отменить действие будет невозможно", "Предупреждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -288,7 +288,7 @@ namespace Course
             }
         }
 
-        private void RemoveData_Click(object sender, EventArgs e)
+        private void RemoveData_Click(object sender, EventArgs e) //Удаление единичной записи
         {
             if (MessageBox.Show("Вы уверены, что хотите удалить элемент списка? Отменить действие будет невозможно.", "Предупреждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -315,46 +315,46 @@ namespace Course
             }
         }
 
-        private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
+        private void TabControl_SelectedIndexChanged(object sender, EventArgs e) //Закрытие панели присмотра и обновления таблицы при переключении вкладок
         {
-            if (tabControl.SelectedTab.Name != "floor")
+            if (floorclassroomTabControl.SelectedTab.Name != "floor")
             {         
-                FillTabPage(tabControl.SelectedTab, GetFloorFromTabPageName(tabControl.SelectedTab.Name));
+                FillTabPage(floorclassroomTabControl.SelectedTab, GetFloorFromTabPageName(floorclassroomTabControl.SelectedTab.Name));
             }
             CloseWatchPanel_Click(sender, e);
         }
 
-        private void FloorDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void FloorDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //Открытие подробной информации об этаже
         {
             if (e.RowIndex >= 0)
             {
                 TabPage tabPage = new TabPage("Аудитории " + floorDataGridView.Rows[e.RowIndex].Cells[0].Value + " этажа");
                 tabPage.Name = "classroom" + floorDataGridView.Rows[e.RowIndex].Cells[0].Value;
-                foreach (TabPage tab in tabControl.TabPages)
+                foreach (TabPage tab in floorclassroomTabControl.TabPages)
                 {
                     if (tabPage.Text == tab.Text)
                     {
                         return;
                     }
                 }
-                tabControl.TabPages.Add(tabPage);
-                tabControl.SelectedIndex = tabControl.TabCount - 1;
-                FillTabPage(tabControl.SelectedTab, (int)floorDataGridView.Rows[e.RowIndex].Cells[0].Value);
+                floorclassroomTabControl.TabPages.Add(tabPage);
+                floorclassroomTabControl.SelectedIndex = floorclassroomTabControl.TabCount - 1;
+                FillTabPage(floorclassroomTabControl.SelectedTab, (int)floorDataGridView.Rows[e.RowIndex].Cells[0].Value);
             }     
         }
 
-        private void CloseWatchPanel_Click(object sender, EventArgs e)
+        private void CloseWatchPanel_Click(object sender, EventArgs e) //Закрытие панели просмотра
         {
-            tabControl.Size = new Size(915, 733);
+            floorclassroomTabControl.Size = new Size(915, 733);
             watchPanel.Visible = false;
-            if (tabControl.SelectedTab.Name != "floor")
+            if (floorclassroomTabControl.SelectedTab.Name != "floor")
             {
-                FillTabPage(tabControl.SelectedTab, GetFloorFromTabPageName(tabControl.SelectedTab.Name));
+                FillTabPage(floorclassroomTabControl.SelectedTab, GetFloorFromTabPageName(floorclassroomTabControl.SelectedTab.Name));
             }
             CancelChange_Click(sender, e);
         }
 
-        private void FloorDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void FloorDataGridView_CellClick(object sender, DataGridViewCellEventArgs e) //Открытие панели просмотра информации об этаже
         {
             if (e.RowIndex >= 0)
             {
@@ -364,7 +364,7 @@ namespace Course
                 imageMessage.Visible = false;
                 classroomsBox.Visible = true;
                 classroomsLabel.Visible = true;
-                tabControl.Size = new Size(915, 414);
+                floorclassroomTabControl.Size = new Size(915, 414);
                 watchPanel.Visible = true;
                 classroomNumber.Visible = false;
                 classroomLabel.Visible = false;
@@ -391,21 +391,21 @@ namespace Course
             }
         }
 
-        private void Autosave_CheckedChanged(object sender, EventArgs e)
+        private void Autosave_CheckedChanged(object sender, EventArgs e) //Изменение параметра автосохранения
         {
             autosaveInFile = autosave.Checked;
         }
 
-        private void Add_Click(object sender, EventArgs e)
+        private void Add_Click(object sender, EventArgs e) //Открытие формы добавления элемента
         {
             Add addForm = new Add();
             addForm.Show();
             FillFloorDataGridView();
         }
 
-        private void Source_Click(object sender, EventArgs e)
+        private void Source_Click(object sender, EventArgs e) //Открытие источника в виде папки
         {
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            if (openFolder.ShowDialog() == DialogResult.OK)
             {
                 if (autosave.Checked)
                 {
@@ -414,11 +414,11 @@ namespace Course
                     autosave.Checked = true;
                 }
                 mainList.Clear();
-                mainPath = folderBrowserDialog.SelectedPath;
-                toolStripSeparator.Visible = true;
-                toolStripSeparator1.Visible = true;
-                add.Visible = true;
-                tabControl.Visible = true;
+                mainPath = openFolder.SelectedPath;
+                addSeparator.Visible = true;
+                saveSeparator.Visible = true;
+                addButton.Visible = true;
+                floorclassroomTabControl.Visible = true;
                 message.Visible = false;
                 saveButton.Visible = true;
                 removeAllButton.Visible = true;
@@ -426,12 +426,12 @@ namespace Course
             }
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e) //Сохранение списка в файл
         {
             FileWork.SaveFloorInFile();
         }
 
-        public void MainListChanged(object sender, ListEventArgs e)
+        public void MainListChanged(object sender, ListEventArgs e) //Обновление главной таблицы (файлов при автосохранении)
         {
             foreach(Floor f in mainList)
             {
@@ -442,14 +442,14 @@ namespace Course
             FillFloorDataGridView();
         }
 
-        private void Classrooms_onListChange(object sender, ListEventArgs e)
+        private void Classrooms_onListChange(object sender, ListEventArgs e) //Обновление главной таблицы при изменении списков аудиторий
         {
             if (autosave.Checked)
                 FileWork.SaveFloorInFile();
             FillFloorDataGridView();
         }
 
-        private void FillTabPage(TabPage tabPage, int floor)
+        private void FillTabPage(TabPage tabPage, int floor) //Заполнение вкладок подробной информацией о этажах
         {
             tabPage.Controls.Clear();
             Button closeTab = new Button();
@@ -505,14 +505,14 @@ namespace Course
             }
         }
 
-        private void ClassroomDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void ClassroomDataGridView_CellClick(object sender, DataGridViewCellEventArgs e) //Открытие панели просмотра информации об аудитории
         {
             if (e.RowIndex >= 0)
             {
                 watchPanel.Visible = true;
                 changeImage.Visible = true;
                 removeImage.Visible = true;
-                FillTabPage(tabControl.SelectedTab, GetFloorFromTabPageName(tabControl.SelectedTab.Name));
+                FillTabPage(floorclassroomTabControl.SelectedTab, GetFloorFromTabPageName(floorclassroomTabControl.SelectedTab.Name));
                 classroomsLabel.Visible = false;
                 classroomsBox.Visible = false;
                 classroomLabel.Visible = true;
@@ -566,21 +566,21 @@ namespace Course
             }
         }
 
-        private void CloseTab_Click(object sender, EventArgs e)
+        private void CloseTab_Click(object sender, EventArgs e)  //Закрытие текущей вкладки
         {
-            tabControl.TabPages.Remove(tabControl.SelectedTab);
+            floorclassroomTabControl.TabPages.Remove(floorclassroomTabControl.SelectedTab);
         }
 
-        private int GetFloorFromTabPageName(string name)
+        private int GetFloorFromTabPageName(string name)  //Получение номера этажа по названию вкладки
         {
             string floor = "";
-            for (int i = 9; i < tabControl.SelectedTab.Name.Length; i++)
+            for (int i = 9; i < floorclassroomTabControl.SelectedTab.Name.Length; i++)
             {
-                floor += tabControl.SelectedTab.Name[i];
+                floor += floorclassroomTabControl.SelectedTab.Name[i];
             }
             return Convert.ToInt32(floor);
         }
-        private void FillFloorDataGridView()
+        private void FillFloorDataGridView() //Заполнение главной таблицы
         {
             floorDataGridView.Rows.Clear();
             int i = 0;
@@ -595,9 +595,9 @@ namespace Course
                 floorDataGridView.Rows[i].Cells[1].Value = classroomsDGV;
                 i++;
             }
-            if(tabControl.SelectedTab.Name != "floor")
+            if(floorclassroomTabControl.SelectedTab.Name != "floor")
             {
-                FillTabPage(tabControl.SelectedTab, GetFloorFromTabPageName(tabControl.SelectedTab.Name));
+                FillTabPage(floorclassroomTabControl.SelectedTab, GetFloorFromTabPageName(floorclassroomTabControl.SelectedTab.Name));
             }
         }
     }

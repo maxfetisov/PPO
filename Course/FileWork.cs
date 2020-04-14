@@ -6,7 +6,7 @@ namespace Course
 {
     class FileWork
     {
-        public static void ReadFromFile()
+        public static void ReadFromFile() //Чтение из файла и заполнение списка с проверкой
         {
             if (System.IO.File.Exists(Main.mainPath + "\\floor.txt"))
             {
@@ -64,7 +64,7 @@ namespace Course
                 catch  { }
             }
         }
-        public static void SaveFloorInFile()
+        public static void SaveFloorInFile() //запись в файл
         {
             try
             {

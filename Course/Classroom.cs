@@ -2,13 +2,13 @@
 {
     public class Classroom
     {
-        private int number;
-        private string ownerName;
-        private double square;
-        private bool safety;
-        private string department;
-        private int capacity;
-        private string image;
+        private int number; //Номер аудитории
+        private string ownerName; //Имя ответственного
+        private double square; //Площадь аудитории
+        private bool safety; //Прохождение проверки безопасности
+        private string department; //Кафедра, к которой принадлежит аудитория
+        private int capacity; //Вместимость аудитории
+        private string image; //Путь к картинке
         public Classroom() { }
         public Classroom(int number, string ownerName, double square, bool safety, string department, int capacity)
         {
@@ -36,7 +36,7 @@
         public bool Safety { get => safety; set => safety = value; }
         public double Square { get => square; set => square = value; }
         public string Image { get => image; set => image = value; }
-        public bool IsValid()
+        public bool IsValid() //Проверка "валидности" аудитории
         {
             try
             {

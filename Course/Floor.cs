@@ -2,9 +2,9 @@
 {
     public class Floor
     {
-        private int number;
-        private string path;
-        public SList<Classroom> classrooms;
+        private int number; //Номер этажа
+        private string path; //Путь к файлу, гре хранятся аудитории
+        public SList<Classroom> classrooms; //Список аудиторий
         public Floor()
         {
             path = "Classroom" + number + ".txt";
@@ -25,7 +25,7 @@
         }
         public int Number { get => number; set => number = value; }
         public string Path { get => path; set => path = value; }
-        public bool IsValid()
+        public bool IsValid() //Проверка "валидности" данных об этаже
         {
             try
             {

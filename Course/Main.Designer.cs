@@ -29,21 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.source = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.add = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mainMenu = new System.Windows.Forms.ToolStrip();
+            this.sourceButton = new System.Windows.Forms.ToolStripButton();
+            this.addSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.addButton = new System.Windows.Forms.ToolStripButton();
+            this.saveSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.saveButton = new System.Windows.Forms.ToolStripButton();
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.floorclassroomTabControl = new System.Windows.Forms.TabControl();
             this.floor = new System.Windows.Forms.TabPage();
             this.floorDataGridView = new System.Windows.Forms.DataGridView();
             this.floorNumberDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classroomsDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.autosave = new System.Windows.Forms.CheckBox();
-            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.openFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.message = new System.Windows.Forms.Label();
             this.watchPanel = new System.Windows.Forms.Panel();
+            this.removeImage = new System.Windows.Forms.Button();
+            this.imageMessage = new System.Windows.Forms.Label();
             this.changeImage = new System.Windows.Forms.Button();
             this.cancelChange = new System.Windows.Forms.Button();
             this.submitChange = new System.Windows.Forms.Button();
@@ -68,10 +70,8 @@
             this.classroomPicture = new System.Windows.Forms.PictureBox();
             this.removeAllButton = new System.Windows.Forms.Button();
             this.openImage = new System.Windows.Forms.OpenFileDialog();
-            this.imageMessage = new System.Windows.Forms.Label();
-            this.removeImage = new System.Windows.Forms.Button();
-            this.toolStrip.SuspendLayout();
-            this.tabControl.SuspendLayout();
+            this.mainMenu.SuspendLayout();
+            this.floorclassroomTabControl.SuspendLayout();
             this.floor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.floorDataGridView)).BeginInit();
             this.watchPanel.SuspendLayout();
@@ -82,59 +82,59 @@
             ((System.ComponentModel.ISupportInitialize)(this.classroomPicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolStrip
+            // mainMenu
             // 
-            this.toolStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(177)))), ((int)(((byte)(221)))));
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.source,
-            this.toolStripSeparator,
-            this.add,
-            this.toolStripSeparator1,
+            this.mainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(177)))), ((int)(((byte)(221)))));
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sourceButton,
+            this.addSeparator,
+            this.addButton,
+            this.saveSeparator,
             this.saveButton});
-            this.toolStrip.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(915, 25);
-            this.toolStrip.TabIndex = 0;
-            this.toolStrip.Text = "toolStrip1";
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Size = new System.Drawing.Size(915, 25);
+            this.mainMenu.TabIndex = 0;
+            this.mainMenu.Text = "toolStrip1";
             // 
-            // source
+            // sourceButton
             // 
-            this.source.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(74)))), ((int)(((byte)(120)))));
-            this.source.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.source.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.source.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.source.Image = ((System.Drawing.Image)(resources.GetObject("source.Image")));
-            this.source.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.source.Name = "source";
-            this.source.Size = new System.Drawing.Size(100, 22);
-            this.source.Text = "Выбрать папку";
+            this.sourceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(74)))), ((int)(((byte)(120)))));
+            this.sourceButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.sourceButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sourceButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sourceButton.Image = ((System.Drawing.Image)(resources.GetObject("sourceButton.Image")));
+            this.sourceButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sourceButton.Name = "sourceButton";
+            this.sourceButton.Size = new System.Drawing.Size(100, 22);
+            this.sourceButton.Text = "Выбрать папку";
             // 
-            // toolStripSeparator
+            // addSeparator
             // 
-            this.toolStripSeparator.BackColor = System.Drawing.Color.White;
-            this.toolStripSeparator.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            this.toolStripSeparator.Visible = false;
+            this.addSeparator.BackColor = System.Drawing.Color.White;
+            this.addSeparator.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.addSeparator.Name = "addSeparator";
+            this.addSeparator.Size = new System.Drawing.Size(6, 25);
+            this.addSeparator.Visible = false;
             // 
-            // add
+            // addButton
             // 
-            this.add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(74)))), ((int)(((byte)(120)))));
-            this.add.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.add.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.add.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.add.Image = ((System.Drawing.Image)(resources.GetObject("add.Image")));
-            this.add.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(70, 22);
-            this.add.Text = "Добавить";
-            this.add.Visible = false;
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(74)))), ((int)(((byte)(120)))));
+            this.addButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.addButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addButton.Image = ((System.Drawing.Image)(resources.GetObject("addButton.Image")));
+            this.addButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(70, 22);
+            this.addButton.Text = "Добавить";
+            this.addButton.Visible = false;
             // 
-            // toolStripSeparator1
+            // saveSeparator
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            this.toolStripSeparator1.Visible = false;
+            this.saveSeparator.Name = "saveSeparator";
+            this.saveSeparator.Size = new System.Drawing.Size(6, 25);
+            this.saveSeparator.Visible = false;
             // 
             // saveButton
             // 
@@ -149,18 +149,18 @@
             this.saveButton.Text = "Сохранить";
             this.saveButton.Visible = false;
             // 
-            // tabControl
+            // floorclassroomTabControl
             // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.floorclassroomTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.floor);
-            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl.Location = new System.Drawing.Point(0, 28);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(915, 733);
-            this.tabControl.TabIndex = 1;
-            this.tabControl.Visible = false;
+            this.floorclassroomTabControl.Controls.Add(this.floor);
+            this.floorclassroomTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.floorclassroomTabControl.Location = new System.Drawing.Point(0, 28);
+            this.floorclassroomTabControl.Name = "floorclassroomTabControl";
+            this.floorclassroomTabControl.SelectedIndex = 0;
+            this.floorclassroomTabControl.Size = new System.Drawing.Size(915, 733);
+            this.floorclassroomTabControl.TabIndex = 1;
+            this.floorclassroomTabControl.Visible = false;
             // 
             // floor
             // 
@@ -260,6 +260,29 @@
             this.watchPanel.TabIndex = 4;
             this.watchPanel.Visible = false;
             // 
+            // removeImage
+            // 
+            this.removeImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(74)))), ((int)(((byte)(120)))));
+            this.removeImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.removeImage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.removeImage.Location = new System.Drawing.Point(183, 279);
+            this.removeImage.Name = "removeImage";
+            this.removeImage.Size = new System.Drawing.Size(176, 23);
+            this.removeImage.TabIndex = 23;
+            this.removeImage.Text = "Удалить изображение";
+            this.removeImage.UseVisualStyleBackColor = false;
+            // 
+            // imageMessage
+            // 
+            this.imageMessage.AutoSize = true;
+            this.imageMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.imageMessage.Location = new System.Drawing.Point(69, 153);
+            this.imageMessage.Name = "imageMessage";
+            this.imageMessage.Size = new System.Drawing.Size(231, 20);
+            this.imageMessage.TabIndex = 22;
+            this.imageMessage.Text = "Изображение отсутствует";
+            // 
             // changeImage
             // 
             this.changeImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(74)))), ((int)(((byte)(120)))));
@@ -305,7 +328,7 @@
             // 
             this.classroomsBox.Enabled = false;
             this.classroomsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.classroomsBox.Location = new System.Drawing.Point(306, 158);
+            this.classroomsBox.Location = new System.Drawing.Point(306, 157);
             this.classroomsBox.Name = "classroomsBox";
             this.classroomsBox.Size = new System.Drawing.Size(360, 22);
             this.classroomsBox.TabIndex = 18;
@@ -562,29 +585,6 @@
             // 
             this.openImage.FileName = "openFileDialog";
             // 
-            // imageMessage
-            // 
-            this.imageMessage.AutoSize = true;
-            this.imageMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.imageMessage.Location = new System.Drawing.Point(69, 153);
-            this.imageMessage.Name = "imageMessage";
-            this.imageMessage.Size = new System.Drawing.Size(231, 20);
-            this.imageMessage.TabIndex = 22;
-            this.imageMessage.Text = "Изображение отсутствует";
-            // 
-            // removeImage
-            // 
-            this.removeImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(74)))), ((int)(((byte)(120)))));
-            this.removeImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.removeImage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.removeImage.Location = new System.Drawing.Point(183, 279);
-            this.removeImage.Name = "removeImage";
-            this.removeImage.Size = new System.Drawing.Size(176, 23);
-            this.removeImage.TabIndex = 23;
-            this.removeImage.Text = "Удалить изображение";
-            this.removeImage.UseVisualStyleBackColor = false;
-            // 
             // Main
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(223)))), ((int)(((byte)(249)))));
@@ -592,16 +592,16 @@
             this.Controls.Add(this.removeAllButton);
             this.Controls.Add(this.watchPanel);
             this.Controls.Add(this.autosave);
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.toolStrip);
+            this.Controls.Add(this.floorclassroomTabControl);
+            this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.message);
             this.MinimumSize = new System.Drawing.Size(931, 833);
             this.Name = "Main";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
-            this.tabControl.ResumeLayout(false);
+            this.mainMenu.ResumeLayout(false);
+            this.mainMenu.PerformLayout();
+            this.floorclassroomTabControl.ResumeLayout(false);
             this.floor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.floorDataGridView)).EndInit();
             this.watchPanel.ResumeLayout(false);
@@ -619,17 +619,17 @@
         #endregion
 
 
-        private System.Windows.Forms.ToolStrip toolStrip;
-        private System.Windows.Forms.ToolStripButton source;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripButton add;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStrip mainMenu;
+        private System.Windows.Forms.ToolStripButton sourceButton;
+        private System.Windows.Forms.ToolStripSeparator addSeparator;
+        private System.Windows.Forms.ToolStripButton addButton;
+        private System.Windows.Forms.ToolStripSeparator saveSeparator;
         private System.Windows.Forms.ToolStripButton saveButton;
-        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabControl floorclassroomTabControl;
         private System.Windows.Forms.TabPage floor;
         private System.Windows.Forms.DataGridView floorDataGridView;
         private System.Windows.Forms.CheckBox autosave;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
+        private System.Windows.Forms.FolderBrowserDialog openFolder;
         private System.Windows.Forms.Label message;
         private System.Windows.Forms.Panel watchPanel;
         private System.Windows.Forms.Button closeWatchPanel;
