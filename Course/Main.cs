@@ -278,10 +278,10 @@ namespace Course
                         }
                         File.Delete(mainPath + "\\floor.txt");
                         mainList.Clear();
+                        GC.Collect();
                     }
                 }
             }
-
         }
 
         private void RemoveData_Click(object sender, EventArgs e)
