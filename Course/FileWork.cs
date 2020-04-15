@@ -70,7 +70,7 @@ namespace Course
             {
                 if (!System.IO.File.Exists(Main.mainPath + "\\floor.txt"))
                 {
-                    System.IO.File.Create(Main.mainPath + "\\floor.txt");
+                    System.IO.File.Create(Main.mainPath + "\\floor.txt").Close();
                 }
                 System.IO.File.WriteAllLines(Main.mainPath + "\\floor.txt", Main.mainList.ToString(), Encoding.Default);
                 foreach (Floor floor in Main.mainList)

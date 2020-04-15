@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Course.Add">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAEACAAAAIAAALgAAASAACABBIBAIAAAAgAIQE=</HashCode>
+      <FileName>Add.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Course.Classroom">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAEAEoAAAASEgAAABIACAAgAAgAIAA=</HashCode>
+      <FileName>Classroom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Course.FileWork">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileWork.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Course.Floor">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAIEAEgCAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Floor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Course.ListEventArgs">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>ListEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Course.Main">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>logQQBAEgCBAAMEAACKsQAYSAQAKMBKRooH4BSiANyg=</HashCode>
+      <FileName>Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Course.SList&lt;T&gt;">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Course.SList&lt;T&gt;.ListChangeHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>SList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIAAEgAAAAAAAAEAAAABAAAAAAAAACACAAAAABAAAA=</HashCode>
+      <FileName>SList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Course.Properties.Resources">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAABAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Course.Properties.Settings">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
